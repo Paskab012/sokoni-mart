@@ -26,7 +26,7 @@ const ProfileComponent = () => {
           onClick={() => setOpen((pv) => !pv)}
           className='flex items-center gap-2 px-3 py-2 rounded-md text-slate-700 bg-[#dadada] hover:bg-[#f3f3f3] transition-colors'
         >
-          <span className='font-medium text-sm'>Joe Doe</span>
+          <span className='font-medium text-sm md:text-xl'>Joe Doe</span>
           <motion.span variants={iconVariants}>
             <FiChevronDown />
           </motion.span>
@@ -36,7 +36,7 @@ const ProfileComponent = () => {
           initial={wrapperVariants.closed}
           variants={wrapperVariants}
           style={{ originY: "top", translateX: "-50%" }}
-          className='flex flex-col gap-2 p-2 rounded-lg bg-white  shadow-xl absolute top-[120%] left-[50%] w-48 overflow-hidden'
+          className='flex flex-col gap-2 p-2 rounded-lg bg-white   shadow-xl absolute top-[120%] left-[50%] w-48 overflow-hidden'
         >
           <Option setOpen={setOpen} Icon={FiEdit} text='Edit profile' />
           <Option setOpen={setOpen} Icon={FiPlusSquare} text='Dashbaord' />
@@ -53,7 +53,7 @@ const Option: React.FC<MotionProps> = ({ text, Icon, setOpen }) => {
     <motion.li
       variants={itemVariants}
       onClick={() => setOpen(false)}
-      className='flex items-center gap-2 w-full p-2 text-xs font-medium whitespace-nowrap rounded-md hover:bg-indigo-100 text-slate-700 hover:text-slate-700 transition-colors cursor-pointer'
+      className='flex items-center gap-2 w-full p-2 text-sm font-medium whitespace-nowrap rounded-md hover:bg-indigo-100 text-slate-700 hover:text-slate-700 transition-colors cursor-pointer'
     >
       <motion.span variants={actionIconVariants}>
         <Icon />

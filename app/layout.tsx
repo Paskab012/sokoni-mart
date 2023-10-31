@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/nav/Navbar";
 import Footer from "./components/footer/Footer";
 import Categories from "./components/categories";
+import UpNavBar from "./components/nav/UpNavbar";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"]
+});
+
+const roboto_mono = Roboto_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto-mono"
 });
 
 export const metadata: Metadata = {
@@ -22,8 +29,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${poppins.className} text-slate-700`}>
+      <body className={`${roboto_mono.className} text-slate-700`}>
         <div className='flex flex-col min-h-screen'>
+          <div>
+            <UpNavBar />
+          </div>
           <Navbar />
           <div className='w-full'>
             <Categories />

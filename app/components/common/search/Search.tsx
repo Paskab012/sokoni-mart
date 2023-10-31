@@ -7,7 +7,7 @@ export type SearchProps = {
 
 const Search = (props: SearchProps) => {
   const { onSearch } = props;
-  const [value, setValue] = useState("Enter search...");
+  const [value, setValue] = useState("What can we help you find?");
 
   const searchHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const { target } = event;
@@ -26,13 +26,13 @@ const Search = (props: SearchProps) => {
         type='search'
         name='search'
         placeholder={value}
-        className='bg-[#dadada] h-10 px-5 pr-10 w-full text-slate-700 rounded-md text-sm focus:outline-none'
+        className='border border-[#dadada] h-14 px-5 pr-10 w-full text-slate-700 rounded text-sm focus:outline-none md:placeholder:text-xl placeholder:text-sm placeholder:text-slate-400'
         onChange={(event) => searchHandler(event)}
         onKeyDown={handleKeyDown}
       />
-      <button type='submit' className='absolute right-0 top-0 mt-3 mr-4'>
+      <button type='submit' className='absolute right-0 top-0 mt-4 mr-4'>
         <svg
-          className='h-4 w-4 fill-current'
+          className='h-6 w-6 fill-[#636363]'
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 20 20'
         >
