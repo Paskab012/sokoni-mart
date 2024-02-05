@@ -1,3 +1,13 @@
+import Categories from "./components/categories";
+import Hero from "./components/hero/Hero";
+
 export default function Home() {
-  return <div>SOKONI APP</div>;
+  return (
+    <main>
+      <Hero />
+      <div className='w-full'>
+        <Categories />
+      </div>
+    </main>
+  );
 }

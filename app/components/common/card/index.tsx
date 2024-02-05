@@ -16,7 +16,7 @@ interface CardProps {
 const CategoryCards = () => {
   return (
     <div className='py-4'>
-      <div className='grid gap-4 grid-cols-2 lg:grid-cols-6'>
+      <div className='grid gap-4 grid-cols-2 lg:grid-cols-3'>
         <Card
           title='Personnal'
           subtitle='Find your needs'
@@ -34,24 +34,6 @@ const CategoryCards = () => {
           subtitle='Get the best...'
           href='#'
           Icon={GiFocusedLightning}
-        />
-        <Card
-          title='Luxaries'
-          subtitle='Diamond rings...'
-          href='#'
-          Icon={SiInfluxdb}
-        />
-        <Card
-          title='Sport'
-          subtitle='Jezz available at...'
-          href='#'
-          Icon={MdOutlineSportsMartialArts}
-        />
-        <Card
-          title='Cars'
-          subtitle='New vehicles and...'
-          href='#'
-          Icon={IoCarSportSharp}
         />
       </div>
     </div>

@@ -6,6 +6,9 @@ import Footer from "./components/footer/Footer";
 import Categories from "./components/categories";
 import UpNavBar from "./components/nav/UpNavbar";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"]
@@ -18,8 +21,8 @@ const roboto_mono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sokoni",
-  description: "This is a sokoni e-shop app"
+  title: "VIMA APP",
+  description: "This is a virtual market e-shop app"
 };
 
 export default function RootLayout({
@@ -29,16 +32,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${roboto_mono.className} text-slate-700`}>
-        <div className='flex flex-col min-h-screen'>
-          <div>
+      <body className={`${roboto_mono.className} bg-[#f2f2f2]`}>
+        <div className='flex flex-col '>
+          {/* <div>
             <UpNavBar />
-          </div>
+          </div> */}
           <Navbar />
-          <div className='w-full'>
-            <Categories />
-          </div>
-          <main className='flex-grow bg-#f2f2f2'>{children}</main>
+
+          <main className=' bg-#f2f2f2'>{children}</main>
           <Footer />
         </div>
       </body>

@@ -1,54 +1,60 @@
 import React from "react";
-import Link from "next/link";
-import { Redressed } from "next/font/google";
-import { FiShoppingCart } from "react-icons/fi";
+import Image from "next/image";
+import img from "../../assets/logo.svg";
 
-import SearchComponent from "../common/search";
-import Container from "../Container";
-import ProfileComponent from "../common/userProfile";
+import { BsSearch } from "react-icons/bs";
+import { BiUser } from "react-icons/bi";
+import { FiHeart } from "react-icons/fi";
+import { HiOutlineShoppingBag } from "react-icons/hi";
 
-const redressed = Redressed({
-  subsets: ["latin"],
-  weight: "400"
-});
-
-function Navbar() {
+const Navbar = () => {
   return (
-    <div className='sticky top-0 w-full bg-#999999 z-30 shadow-sm px-12'>
-      <div className='py-8 '>
-        {/* <Container> */}
-        <div className='flex items-center justify-between gap-3 md:gap-0 w-full'>
-          <div className='hidden md:flex w-full items-center justify-start'>
-            <SearchComponent />
-          </div>
-          <div className='w-full flex justify-center bg-red-400'>
-            <Link
-              href='/'
-              className={`${redressed.className} text-6xl font-bold`}
-            >
-              Sokoni
-            </Link>
-          </div>
-          <div className=' items-center gap-8 md:gap-12 w-full flex justify-center bg-purple-500'>
-            <div>
-              <ProfileComponent />
+    <div className=' py-10 fixed z-50 flex justify-center w-full mx-auto'>
+      <div className='w-full mx-40 px-8 h-20 gap-6 rounded-lg sm:flex justify-between items-center bg-[#F4F4F4] border-[0.5px] border-[#222222]'>
+        <div className='font-bold text-4xl text-center pb-4 sm:pb-0 text-blackish'>
+          <Image
+            className='w-[100%] h-[300px] md:h-auto rounded-xl object-cover object-right md:object-left-bottom'
+            src={img}
+            alt='banner'
+            width={2000}
+            height={2000}
+          />{" "}
+        </div>
+
+        <div className='w-full  relative bg-[#F4F4F4] hidden'>
+          <input
+            className='border-gray-800 border p-4 px-4 rounded-lg w-full'
+            type='text'
+            placeholder='Search your favorite item...'
+          />
+
+          <BsSearch
+            className='absolute right-0 top-0 mr-5 mt-5 text-[#15A1DB]'
+            size={20}
+          />
+        </div>
+
+        <div className='hidden lg:flex gap-4 text-[#15A1DB] text-[30px]'>
+          <BsSearch className='cursor-pointer' />
+          <BiUser />
+
+          <div className='relative'>
+            <FiHeart />
+            <div className='bg-[#15A1DB] rounded-full absolute top-0 right-0 w-[18px] h-[18px] text-[12px] text-white grid place-items-center translate-x-1 -translate-y-1'>
+              0
             </div>
-            <div className='relative cursor-pointer'>
-              <Link href='/cart'>
-                <div>
-                  <FiShoppingCart className='md:text-2xl text-xl' />
-                  <span className='absolute -top-2 -right-2 text-[13px] bg-red-600 md:h-[18px] md:w-[18px] w-[14px] h-[14px] rounded-full grid place-items-center text-white'>
-                    1
-                  </span>
-                </div>
-              </Link>
+          </div>
+
+          <div className='relative'>
+            <HiOutlineShoppingBag />
+            <div className='bg-[#15A1DB] rounded-full absolute top-0 right-0 w-[18px] h-[18px] text-[12px] text-white grid place-items-center translate-x-1 -translate-y-1'>
+              0
             </div>
           </div>
         </div>
-        {/* </Container> */}
       </div>
     </div>
   );
-}
+};
 
 export default Navbar;
